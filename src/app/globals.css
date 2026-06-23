@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+:root {
+  /* Color tokens — paper & instrument palette */
+  --paper: #faf9f4;
+  --paper-dim: #f0eee5;
+  --ink: #1a1d1a;
+  --ink-soft: #4a4f49;
+  --moss: #3d5a4c;
+  --moss-deep: #2a4036;
+  --ochre: #8b6f47;
+  --alert: #c4441e;
+  --line: #d8d4c4;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-dim: var(--paper-dim);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-moss: var(--moss);
+  --color-moss-deep: var(--moss-deep);
+  --color-ochre: var(--ochre);
+  --color-alert: var(--alert);
+  --color-line: var(--line);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+* {
+  border-color: var(--line);
+}
+
+body {
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--moss);
+  color: var(--paper);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: 3px;
+}
+
